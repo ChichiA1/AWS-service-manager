@@ -6,7 +6,7 @@ These are the services and functionalities that are provided.
  ## 🚀 AWS Services
 
 ### S3 bucket services
-'''
+'''txt
 functionalities provided
 '''
 
@@ -35,6 +35,6 @@ functionalities provided
 
 
 ### RedShift services
-'''
+'''txt
 functionalities provided
 '''
