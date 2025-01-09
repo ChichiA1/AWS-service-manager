@@ -1,14 +1,14 @@
 # AWS Services Manager & Azure Services Manager
-'''
+```txt
 These are the services and functionalities that are provided.
-'''
+```
 
  ## 🚀 AWS Services
 
 ### S3 bucket services
-'''txt
+```txt
 functionalities provided
-'''
+```
 
 1. Create a new S3 bucket in the specified region.
 
@@ -35,6 +35,6 @@ functionalities provided
 
 
 ### RedShift services
-'''txt
+```txt
 functionalities provided
-'''
+```
