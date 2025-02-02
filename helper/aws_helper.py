@@ -101,7 +101,7 @@ class S3Connection:
             print(f"Error deleting bucket: {str(e)}")
         return False
 
-    def read_file(self, key: str, bucket_name: str) -> Union[pd.DataFrame, None]:
+    def read_file_to_df(self, bucket_name: str, key: str) -> Union[pd.DataFrame, None]:
         """Reads a CSV file from an S3 bucket and returns it as a pandas DataFrame."""
         try:
             # Fetch the object from S3
@@ -336,13 +336,13 @@ if __name__ == "__main__":
     conn.create_bucket("test-bucket-docs-latest")
     # upload dataset
     conn.upload_to_s3("test doc dataset.csv", "test-bucket-docs-latest", "test-bucket-docs2025/test doc dataset.csv")
-    delete file
+    #delete file
     conn.delete_file("test-bucket-docs-latest", "test-bucket-docs-latest/test doc dataset.csv")
     # upload dataset
     conn.upload_to_s3("test doc dataset.csv", "test-bucket-docs-latest", "test-bucket-docs-latest/test doc dataset.csv")
     # download dataset
     conn.download_file("test-bucket-docs-latest", "test-bucket-docs-latest/test doc dataset.csv", "./test doc dataset.csv")
     # read dataset and put this in a dataframe
-    test_dataset = conn.read_file("test-bucket-docs-latest/test doc dataset.csv", "test-bucket-docs-latest")
+    test_dataset = conn.read_file_to_df("test-bucket-docs-latest", "test-bucket-docs-latest/test doc dataset.csv")
     # upload dataFrame
     conn.write_df(test_dataset, "test-bucket-docs-latest", "test-bucket-docs-latest/test doc dataset.csv")
